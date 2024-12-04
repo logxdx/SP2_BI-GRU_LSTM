@@ -1,4 +1,4 @@
-# Hybrid BiGRU-LSTM Time Series Prediction Model
+# Hybrid Bi{GRU-LSTM} Time Series Prediction Model
 
 This project implements a **Hybrid BiGRU-LSTM Neural Network** using PyTorch for multivariate time-series prediction. The model combines Bidirectional GRU and stacked LSTM layers to effectively capture sequential and temporal dependencies.
 
