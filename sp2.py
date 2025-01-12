@@ -1,8 +1,8 @@
+import matplotlib.pyplot as plt
+import numpy as np
 import torch
 import torch.nn as nn
-from torch.utils.data import DataLoader, TensorDataset
-import numpy as np
-import matplotlib.pyplot as plt
+
 
 # Create sequences for time-series data
 def create_sequences(data, seq_length):
@@ -108,7 +108,7 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, num_epoch
 
     return model, history
 
-
+# Plot Predictions
 def plot_predictions(y_train, y_pred_train, y_val, y_pred_val, feature_names=None):
     # Determine number of features
     num_features = y_train.shape[1] if len(y_train.shape) > 1 else 1
@@ -140,6 +140,7 @@ def plot_predictions(y_train, y_pred_train, y_val, y_pred_val, feature_names=Non
         
         axes[i].set_title(f"{feature_names[i]} - True vs Predicted")
         axes[i].set_ylabel("Value")
+        axes[i].set_xlabel("Time")
         axes[i].legend()
         axes[i].grid()
     
@@ -148,4 +149,3 @@ def plot_predictions(y_train, y_pred_train, y_val, y_pred_val, feature_names=Non
     
     plt.tight_layout()
     plt.show()
-
